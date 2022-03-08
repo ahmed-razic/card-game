@@ -1,8 +1,8 @@
 import Background from './components/Background';
-
-const BASE_URL = 'https://api.pexels.com/v1/search';
+import useGetImages from './hooks/useGetImages';
 
 function App() {
+  useGetImages();
   return (
     <>
       <Background />
