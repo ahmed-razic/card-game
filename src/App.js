@@ -2,7 +2,8 @@ import Background from './components/Background';
 import useGetImages from './hooks/useGetImages';
 
 function App() {
-  useGetImages();
+  const images = useGetImages();
+  console.log({ images });
   return (
     <>
       <Background />
