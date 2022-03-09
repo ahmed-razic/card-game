@@ -54,4 +54,8 @@ const Settings = ({ startGame }) => {
   );
 };
 
+Settings.propTypes = {
+  startGame: PropTypes.func.isRequired,
+};
+
 export default Settings;
