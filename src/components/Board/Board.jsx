@@ -6,17 +6,20 @@ import useGameLogic from '../../hooks/useGameLogic';
 import Loader from '../Loader';
 import styles from './Board.module.css';
 import Card from '../Card';
+import Result from '../Result';
 
 const Board = ({ gameOptions }) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const { cards, onCardClick } = useGameLogic(images);
+  const { cards, onCardClick, isWin } = useGameLogic(images, gameOptions.pace);
 
   useEffect(() => {
     if (images.length > 0) setIsLoading(false);
   }, [images]);
+
   return (
     <div>
+      {isWin && <Result />}
       {isLoading ? (
         <Loader />
       ) : (
